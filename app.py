@@ -37,10 +37,8 @@ def fetch_conversion_factor(source, target):
         print("Error fetching conversion factor:", e)
         return 1  # Default to 1 if API fails
 
-# Vercel requires an `app` object in `index.py`
-def handler(request):
-    return app(request)
+# Vercel expects a callable named `handler`
+from vercel_wsgi import handle_request
 
-if __name__ == "__main__":
-    # app.run(debug=True)
-    app.run()
+def handler(event, context):
+    return handle_request(app, event, context)
