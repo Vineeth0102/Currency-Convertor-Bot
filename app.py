@@ -19,6 +19,7 @@ def index():
     response = {
         'fulfillmentText':"{} {} is {} {}".format(amount,source_currency,final_amount,target_currency)
     }
+    print(response)
     return jsonify(response)
 
 def fetch_conversion_factor(source,target):
