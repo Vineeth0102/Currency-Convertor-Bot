@@ -40,3 +40,7 @@ def fetch_conversion_factor(source, target):
 # Vercel requires an `app` object in `index.py`
 def handler(request):
     return app(request)
+
+if __name__ == "__main__":
+    # app.run(debug=True)
+    app.run()
